@@ -1,7 +1,7 @@
 const express = require('express');
 const RPC = require("discord-rpc");
 const open = require("open");
-
+console.clear()
 
 const client = new RPC.Client({
     transport: 'ipc'
