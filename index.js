@@ -24,6 +24,9 @@ client.on('disconnected', () => {
 client.on('ready', () => {
     connected = true;
     console.log('Authed for user', client.user.username);
+    client.subscribe('ACTIVITY_JOIN', (data) => {
+        console.log(data);
+    })
 });
 
 setInterval(() => {
