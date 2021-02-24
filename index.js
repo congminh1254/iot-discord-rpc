@@ -1,5 +1,7 @@
 const express = require('express');
 const RPC = require("discord-rpc");
+const open = require("open");
+
 
 const client = new RPC.Client({
     transport: 'ipc'
@@ -21,12 +23,18 @@ client.on('disconnected', () => {
     console.log('Client disconnected!');
 });
 
+var last_request = null;
 client.on('ready', () => {
     connected = true;
     console.log('Authed for user', client.user.username);
     client.subscribe('ACTIVITY_JOIN', (data) => {
-        console.log(data);
-    })
+        var data = Buffer.from(data.secret, 'base64');
+        data = JSON.parse(data.toString('ascii'));
+        if (last_request == null || Date() - last_request > 3000) {
+            last_request = new Date();
+            open(data.url);
+        }
+    });
 });
 
 setInterval(() => {
