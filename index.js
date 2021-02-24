@@ -30,7 +30,7 @@ client.on('ready', () => {
     client.subscribe('ACTIVITY_JOIN', (data) => {
         var data = Buffer.from(data.secret, 'base64');
         data = JSON.parse(data.toString('ascii'));
-        if (last_request == null || Date() - last_request > 3000) {
+        if (last_request == null || new Date() - last_request > 3000) {
             last_request = new Date();
             open(data.url);
         }
