@@ -50,7 +50,6 @@ app.get("/iot-presence", (request, response) => {
         return;
     }
     var body = request.query;
-    console.log(body);
     var action = body.action;
     switch (action) {
         case "update":

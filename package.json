@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord-rich-presence": "0.0.8",
     "discord-rpc": "^3.2.0",
     "express": "^4.17.1",
     "open": "^7.4.2"
