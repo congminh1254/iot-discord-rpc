@@ -69,7 +69,7 @@ app.get("/iot-presence", (request, response) => {
             client.clearActivity();
             break;
     }
-    response.send(`console.log("discord-rpc: success");`);
+    response.send(`${body.callback}("discord-rpc: success");`);
     response.end();
 });
 
