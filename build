@@ -1,5 +1,6 @@
 #!/bin/bash
 
-nexe index.js -t linux-x64 -o ./output/iot-discord-rpc-linux
+nexe index.js -t linux-x64 -o ./output/iot-discord-rpc-linux-x64
+nexe index.js -t linux-x32 -o ./output/iot-discord-rpc-linux-x32
 nexe index.js -t macos-10.13.0 -o ./output/iot-discord-rpc-macos
 nexe index.js -t win32-x86-10.13.0 -o ./output/iot-discord-rpc-win.exe
